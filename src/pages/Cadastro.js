@@ -1,6 +1,7 @@
 import React from 'react'
 import FormCadastro from '../components/Form-cadastro/FormCadastro'
-import Header from '../components/Header'
+import Header from '../components/Header/Header'
+
 
 export default class Cadastro extends React.Component {
 	render() {
