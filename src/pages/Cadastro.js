@@ -1,4 +1,5 @@
 import React from 'react'
+import FormCadastro from '../components/Form-cadastro/FormCadastro'
 import Header from '../components/Header'
 
 export default class Cadastro extends React.Component {
@@ -6,7 +7,7 @@ export default class Cadastro extends React.Component {
 		return (
 				<div>
                     <Header/>
-                    Cadastro
+                    <FormCadastro/>
 
                 </div>
 
