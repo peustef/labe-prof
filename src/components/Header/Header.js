@@ -23,7 +23,7 @@ export default class Header extends React.Component {
 
               <div class="flex flex-col md:flex-row  ">
                 <Link to="/cadastro" className="text-gray-800 rounded hover:bg-blue-800 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">
-                  <button>Cadastro</button>
+                  <button>Dar aulas</button>
                 </Link>
                 <Link to="/carrinho/:produtosCarrinho" className="text-gray-800 rounded hover:bg-blue-800 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">
                   <button>
