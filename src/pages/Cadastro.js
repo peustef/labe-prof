@@ -8,6 +8,7 @@ export default class Cadastro extends React.Component {
       <div>
         <Header />
         <FormCadastro />
+        
       </div>
     );
   }
