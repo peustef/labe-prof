@@ -27,8 +27,8 @@ export default class Cadastro extends React.Component {
   render() {
     return (
       <div>
-        <Header />
-
+        <Header />      
+        
         <ContainerPrincipal>
 
             <FormCadastro />
