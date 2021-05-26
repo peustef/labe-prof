@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header/Header";
 import { FaCreditCard } from "react-icons/fa";
+import Footer from "../components/Footer/Footer";
 
 export default class Carrinho extends React.Component {
   render() {
@@ -210,6 +211,7 @@ export default class Carrinho extends React.Component {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
