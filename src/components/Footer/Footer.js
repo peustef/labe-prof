@@ -13,6 +13,11 @@ const ContainerFooter = styled.div`
 const ContainerSecoes = styled.div`
     display: flex;
     flex-direction: row;
+    
+    @media(max-width: 700px){
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 const Secao = styled.div`
@@ -20,6 +25,7 @@ const Secao = styled.div`
     display: flex;
     flex-direction: column;
     padding: 22px 50px;
+
 
     h3{
         font-weight: 600;
