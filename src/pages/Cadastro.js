@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer/Footer";
 import styled from "styled-components";
 import FormCadastro from "../components/Form-cadastro/FormCadastro";
 import Header from "../components/Header/Header";
@@ -25,8 +26,7 @@ export default class Cadastro extends React.Component {
             <FormCadastro />
             <ImgLateral src="https://picsum.photos/seed/picsum/200/300"/>
         </ContainerPrincipal>
-        
-
+        <Footer />
       </div>
     );
   }
