@@ -15,7 +15,7 @@ export default class Header extends React.Component {
             <div className=" flex items-center">
               <div className=" w-64 font-bold text-gray-800 ">
                 <Link to="/">
-                  <a><img src={logo} /></a>
+                  <img src={logo} />
                 </Link>
               </div>
             </div>

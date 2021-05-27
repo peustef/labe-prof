@@ -24,6 +24,25 @@ export default class Carrinho extends React.Component {
       alert(error);
     }
   };
+
+  removerJob = (jobId) => {
+    const URL = "https://labeninjas.herokuapp.com/jobs";
+    const body = {
+      taken: false
+    };
+    const headers = {
+      headers: { Authorization: "6b5d3ade-aeb6-4364-91fa-b9a319e476c5" }
+    };
+    axios
+      .post(`${URL}/${jobId}`, body, headers)
+      .then((res) => {
+        alert("Aula removida do carrinho");
+        this.getAllJobs();
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
   render() {
     const servicosCarrinho = this.state.jobsCarrinho.filter((jobCart) => {
       if (jobCart.taken === true) {
@@ -34,146 +53,44 @@ export default class Carrinho extends React.Component {
 
     const servicos = servicosCarrinho.map((servico) => {
       return (
-        <div className="flex justify-center my-6">
+        <div key={servico.id} className="flex justify-center my-6">
           <div className="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
             <div className="flex-1">
-              <table className="w-full text-sm lg:text-base" cellspacing="0">
+              <table className="w-full text-sm lg:text-base" cellSpacing="0">
                 <thead>
                   <tr className="h-12 uppercase">
                     <th className="hidden md:table-cell"></th>
                     <th className="text-left">Produto</th>
-                    <th className="lg:text-right text-left pl-5 lg:pl-0">
-                      <span className="lg:hidden" title="Quantity">
-                        Qtd
-                      </span>
-                      <span className="hidden lg:inline">Quantidade</span>
-                    </th>
+
                     <th className="hidden text-right md:table-cell">
                       Preço unitário
                     </th>
-                    <th className="text-right">Total</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td className="hidden pb-4 md:table-cell">
-                      <a href="#">
-                        <img
-                          src="https://limg.app/i/Calm-Cormorant-Catholic-Pinball-Blaster-yM4oub.jpeg"
-                          className="w-20 rounded"
-                          alt="Thumbnail"
-                        />
-                      </a>
+
+                      <img
+                        src="https://blog.academia.com.br/wp-content/uploads/2019/02/273098-entenda-qual-e-o-papel-do-professor-na-educacao-dos-alunos.jpg"
+                        className="w-20 rounded"
+                        alt="Thumbnail"
+                      />
+
                     </td>
                     <td>
-                      <a href="#">
-                        <p className="mb-2 md:ml-4">{servico.title}</p>
-                        <form action="" method="POST">
-                          <button type="submit" class="text-gray-700 md:ml-4">
-                            <small>(Remover item)</small>
-                          </button>
-                        </form>
-                      </a>
-                    </td>
-                    <td className="justify-center md:justify-end md:flex mt-6">
-                      <div className="w-20 h-10">
-                        <div className="relative flex flex-row w-full h-8">
-                          <input
-                            type="number"
-                            value="2"
-                            className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black"
-                          />
-                        </div>
-                      </div>
+
+                      <p className="mb-2 md:ml-4">{servico.title}</p>
+
+                      <button onClick={() => this.removerJob(servico.id)} type="submit" className="text-gray-700 md:ml-4">
+                        <small>(Remover item)</small>
+                      </button>
+
+
                     </td>
                     <td className="hidden text-right md:table-cell">
                       <span className="text-sm lg:text-base font-medium">
                         R$ {servico.price},00
-                      </span>
-                    </td>
-                    <td className="text-right">
-                      <span className="text-sm lg:text-base font-medium">
-                        R$ 300,00
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="hidden pb-4 md:table-cell">
-                      <a href="#">
-                        <img
-                          src="https://limg.app/i/Cute-Constrictor-Super-Sexy-Military-Enforcer-W7mvBp.png"
-                          className="w-20 rounded"
-                          alt="Thumbnail"
-                        />
-                      </a>
-                    </td>
-                    <td>
-                      <p className="mb-2 md:ml-4">Tesla Model 3</p>
-                      <form action="" method="POST">
-                        <button type="submit" class="text-gray-700 md:ml-4">
-                          <small>(Remover item)</small>
-                        </button>
-                      </form>
-                    </td>
-                    <td className="justify-center md:justify-end md:flex md:mt-4">
-                      <div className="w-20 h-10">
-                        <div className="relative flex flex-row w-full h-8">
-                          <input
-                            type="number"
-                            value="1"
-                            className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="hidden text-right md:table-cell">
-                      <span className="text-sm lg:text-base font-medium">
-                        R$ 582.000,00
-                      </span>
-                    </td>
-                    <td className="text-right">
-                      <span className="text-sm lg:text-base font-medium">
-                        R$ 582.000,00
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="hidden pb-4 md:table-cell">
-                      <a href="#">
-                        <img
-                          src="https://limg.app/i/Successful-Spider-Biblical-Mutant---Total-War-lKoE7D.jpeg"
-                          className="w-20 rounded"
-                          alt="Thumbnail"
-                        />
-                      </a>
-                    </td>
-                    <td>
-                      <p class="mb-2 md:ml-4">Bic 4 colour pen</p>
-                      <form action="" method="POST">
-                        <button type="submit" class="text-gray-700 md:ml-4">
-                          <small>(Remover item)</small>
-                        </button>
-                      </form>
-                    </td>
-                    <td className="justify-center md:justify-end md:flex md:mt-8">
-                      <div className="w-20 h-10">
-                        <div className="relative flex flex-row w-full h-8">
-                          <input
-                            type="number"
-                            value="3"
-                            className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="hidden text-right md:table-cell">
-                      <span className="text-sm lg:text-base font-medium">
-                        R$ 1,50
-                      </span>
-                    </td>
-                    <td className="text-right">
-                      <span className="text-sm lg:text-base font-medium">
-                        R$ 4,50
                       </span>
                     </td>
                   </tr>
@@ -182,6 +99,8 @@ export default class Carrinho extends React.Component {
               <button className="flex bg-blue-800 rounded-md text-base p-4 font-medium	text-white hover:bg-red-600 uppercase ml-auto">
                 Remover todos os itens
               </button>
+
+
               <hr className="pb-6 mt-6" />
               <div className="flex justify-center my-4 mt-6 -mx-2 lg:flex">
                 <div className="lg:px-2 lg:w-1/2 ">
