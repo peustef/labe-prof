@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header/Header";
 import axios from "axios";
-import { FaCreditCard } from "react-icons/fa";
+import CarrinhoTotal from "../components/CarrinhoTotal/CarrinhoTotal"
 import Footer from "../components/Footer/Footer";
 
 export default class Carrinho extends React.Component {
@@ -36,13 +36,21 @@ export default class Carrinho extends React.Component {
     axios
       .post(`${URL}/${jobId}`, body, headers)
       .then((res) => {
-        alert("Aula removida do carrinho");
         this.getAllJobs();
       })
       .catch((err) => {
         alert(err.message);
       });
   };
+
+  removerTodos = () => {
+    this.state.jobsCarrinho.forEach((job) => {
+      if (job.taken === true) {
+        this.removerJob(job.id)
+      }
+    })
+  }
+
   render() {
     const servicosCarrinho = this.state.jobsCarrinho.filter((jobCart) => {
       if (jobCart.taken === true) {
@@ -81,6 +89,9 @@ export default class Carrinho extends React.Component {
         </tr>
       );
     });
+
+    const valorTotal = servicosCarrinho.reduce((prevVal, elem) => prevVal + elem.price, 0)
+
     return (
       <div>
         <Header />
@@ -103,63 +114,16 @@ export default class Carrinho extends React.Component {
                     {servicos}
                   </tbody>
                 </table>
-                <button className="flex bg-blue-800 rounded-md text-base p-4 font-medium	text-white hover:bg-red-600 uppercase ml-auto">
+                <button onClick={this.removerTodos} className="flex bg-blue-800 rounded-md text-base p-4 font-medium	text-white hover:bg-red-600 uppercase ml-auto">
                   Remover todos os itens
               </button>
 
 
                 <hr className="pb-6 mt-6" />
-                <div className="flex justify-center my-4 mt-6 -mx-2 lg:flex">
-                  <div className="lg:px-2 lg:w-1/2 ">
-                    <div className="p-4 bg-gray-100 rounded-full">
-                      <h1 className="ml-2 font-bold uppercase text-center">
-                        Detalhes da compra
-                    </h1>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex justify-between border-b">
-                        <div className="lg:px-4 lg:py-2 m-2 text-lg lg:text-xl font-bold text-center text-gray-800">
-                          Subtotal
-                      </div>
-                        <div className="lg:px-4 lg:py-2 m-2 lg:text-lg font-bold text-center text-gray-900">
-                          R$ 582.151,5
-                      </div>
-                      </div>
-
-                      <div className="flex justify-between pt-4 border-b">
-                        <div className="lg:px-4 lg:py-2 m-2 lg:text-lg font-bold text-center text-gray-900">
-                          R$ 150,00
-                      </div>
-                      </div>
-                      <div className="flex justify-between pt-4 border-b">
-                        <div className="lg:px-4 lg:py-2 m-2 lg:text-lg font-bold text-center text-gray-900">
-                          R$ 582.000,00
-                      </div>
-                      </div>
-                      <div className="flex justify-between pt-4 border-b">
-                        <div className="lg:px-4 lg:py-2 m-2 lg:text-lg font-bold text-center text-gray-900">
-                          R$ 1,50
-                      </div>
-                      </div>
-                      <div className="flex justify-between pt-4 border-b">
-                        <div className="lg:px-4 lg:py-2 m-2 text-lg lg:text-xl font-bold text-center text-gray-800">
-                          Total
-                      </div>
-                        <div className="lg:px-4 lg:py-2 m-2 lg:text-lg font-bold text-center text-gray-900">
-                          R$ 582.304,5
-                      </div>
-                      </div>
-                      <a href="#">
-                        <button className="flex justify-center items-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-blue-800 rounded-full shadow item-center hover:bg-blue-700 focus:shadow-outline focus:outline-none">
-                          <FaCreditCard className="text-blue-500 w-8 h-8" />
-                          <span className="ml-2 mt-5px text-base">
-                            Finalizar compra
-                        </span>
-                        </button>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                {<CarrinhoTotal
+                  valorTotal={valorTotal}
+                  removerTodos={this.removerTodos}
+                />}
               </div>
             </div>
           </div>

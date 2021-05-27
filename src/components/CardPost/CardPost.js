@@ -16,7 +16,7 @@ export default class CardPost extends React.Component {
       .post(`${URL}/${jobId}`, body, headers)
       .then((res) => {
         alert("Aula adicionada ao carrinho");
-        this.getAllJobs();
+        this.props.getAllJobs();
       })
       .catch((err) => {
         alert(err.message);
