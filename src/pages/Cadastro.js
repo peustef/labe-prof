@@ -4,6 +4,7 @@ import styled from "styled-components";
 import FormCadastro from "../components/Form-cadastro/FormCadastro";
 import Header from "../components/Header/Header";
 import Prof from "../img/prof.jpg"
+import "../tailwind.output.css";
 
 const ContainerPrincipal = styled.div ` 
   display: flex;
@@ -34,12 +35,11 @@ export default class Cadastro extends React.Component {
             <FormCadastro />
 
             <ContainerImg >
-              <ImgLateral src={Prof} alt="imagem professor"/>
+              <ImgLateral src={Prof} alt="imagem professor" className="shadow" />
             </ContainerImg>
             
-        </ContainerPrincipal>
-
-           
+        </ContainerPrincipal>   
+                
         <Footer />
 
       </div>
