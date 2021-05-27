@@ -3,27 +3,6 @@ import { HiShoppingCart } from "react-icons/hi";
 import axios from "axios";
 
 export default class CardPost extends React.Component {
-  state = {
-    servicos: []
-  };
-
-  componentDidMount() {
-    this.getAllJobs();
-  }
-
-  getAllJobs = async () => {
-    const URL = "https://labeninjas.herokuapp.com/jobs";
-    const headers = {
-      headers: { Authorization: "6b5d3ade-aeb6-4364-91fa-b9a319e476c5" }
-    };
-    try {
-      const res = await axios.get(`${URL}`, headers);
-      this.setState({ servicos: res.data.jobs });
-      console.log(this.state.servicos);
-    } catch (error) {
-      alert(error);
-    }
-  };
 
   updateJob = (jobId) => {
     const URL = "https://labeninjas.herokuapp.com/jobs";
@@ -37,6 +16,7 @@ export default class CardPost extends React.Component {
       .post(`${URL}/${jobId}`, body, headers)
       .then((res) => {
         alert("Aula adicionada ao carrinho");
+        this.getAllJobs();
       })
       .catch((err) => {
         alert(err.message);
@@ -44,7 +24,10 @@ export default class CardPost extends React.Component {
   };
 
   render() {
-    const filterJobs = this.state.servicos.filter((servico) => {
+
+    const listaFiltrada = this.props.servicos()
+
+    const filterJobs = listaFiltrada.filter((servico) => {
       if (servico.taken === false) {
         return true;
       }
@@ -73,7 +56,7 @@ export default class CardPost extends React.Component {
             </h1>
 
             <button
-              class="px-6 py-2 bg-blue-600 text-white text-lg  font-semibold rounded-full hover:bg-blue-800 inline-flex items-center "
+              className="px-6 py-2 bg-blue-600 text-white text-lg  font-semibold rounded-full hover:bg-blue-800 inline-flex items-center "
               onClick={() => this.updateJob(job.id)}
             >
               

@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import axios from 'axios'
 import "../../tailwind.output.css";
 import {ContainerForm, FormLine, FormInfo, ContCheck} from "./slyted"
@@ -14,6 +13,10 @@ export default class FormCadastro extends React.Component {
     checkCar: "",
     checkBol: "",
     checkPix: "",
+    checkedD: false,
+    checkedC: false,
+    checkedB: false,
+    checkedP: false,
   }
 
   handleTema = (e) => {
@@ -36,37 +39,61 @@ export default class FormCadastro extends React.Component {
   
   handleCheckDin = (e) => {
     if (e.target.checked ) {
-      this.setState({checkDin: "dinheiro" })
+      this.setState({
+        checkDin: "dinheiro",
+        checkedD: !this.state.checkedD,
+      })
     } else  {
-      this.setState({checkDin: ""})
+      this.setState({
+        checkDin: "",
+        checkedD: !this.state.checkedD,
+      })
     }
   } 
 
   handleCheckCar = (e) => {
     if (e.target.checked) {
-      this.setState({checkCar: "cartão" })
+      this.setState({
+        checkCar: "cartão", 
+        checkedC: !this.state.checkedC
+    })
     } else {
-      this.setState({checkCar: ""})
+      this.setState({
+        checkCar: "",
+        checkedC: !this.state.checkedC
+    })
     }
   } 
 
   handleCheckBol = (e) => {
     if (e.target.checked) {
-      this.setState({checkBol: "boleto" })
+      this.setState({
+        checkBol: "boleto",
+        checkedB: !this.state.checkedB    
+    })
     } else {
-      this.setState({checkBol: ""})
+      this.setState({
+        checkBol: "",
+        checkedB: !this.state.checkedB
+    })
     }
   } 
     
   handleCheckPix = (e) => {
     if (e.target.checked) {
-      this.setState({checkPix: "pix" })
+      this.setState({
+        checkPix: "pix",
+        checkedP: !this.state.checkedP
+    })
     } else {
-      this.setState({checkPix: ""})
+      this.setState({
+        checkPix: "",
+        checkedP: !this.state.checkedP
+    })
     }
   } 
 
-  cadastraAula = () => {
+   cadastraAula = () => {
     const Pgt = [this.state.checkDin, this.state.checkCar, this.state.checkBol, this.state.checkPix]
     const URL = "https://labeninjas.herokuapp.com/jobs"
     const headers = {headers: {Authorization: "6b5d3ade-aeb6-4364-91fa-b9a319e476c5"}} 
@@ -89,10 +116,14 @@ export default class FormCadastro extends React.Component {
           inputValor: "",
           inputInfo: "",
           inputData: "",
-        })
+          checkedD: false,
+          checkedC: false,
+          checkedB: false,
+          checkedP: false,
+        })      
       })
-      .catch((err) => {
-        alert(err.message)
+      .catch(() => {
+        alert("ocorreu um erro, tente novamente")
       })        
     }      
   }
@@ -136,32 +167,45 @@ export default class FormCadastro extends React.Component {
       </FormLine>
 
       <FormLine >
+
           <h3>Formas de pagamento: </h3>
 
             <ContCheck>
 
-                <label>Dinheiro
+                <label >Dinheiro
                   <input 
                   type="checkbox"
-                  onChange={this.handleCheckDin}/> 
+                  onChange={this.handleCheckDin}
+                  className="form-checkbox h-3 w-3 text-blue-600"  
+                  checked={this.state.checkedD}                
+                  />                   
                 </label>                
                                         
-                <label>Cartão
+                <label >Cartão
                   <input 
                   type="checkbox"
-                  onChange={this.handleCheckCar}/> 
+                  onChange={this.handleCheckCar}
+                  className="form-checkbox h-3 w-3 text-blue-600"
+                  checked={this.state.checkedC}                                      
+                  /> 
                 </label>                
                            
-                <label>Boleto
+                <label >Boleto
                   <input 
                   type="checkbox"
-                  onChange={this.handleCheckBol} /> 
+                  onChange={this.handleCheckBol}
+                  className="form-checkbox h-3 w-3 text-blue-600"
+                  checked={this.state.checkedB}                      
+                  /> 
                 </label>                
                             
-                <label>Pix
+                <label >Pix
                   <input 
                   type="checkbox"
-                  onChange={this.handleCheckPix} /> 
+                  onChange={this.handleCheckPix} 
+                  className="form-checkbox h-3 w-3 text-blue-600"
+                  checked={this.state.checkedP}                     
+                  /> 
                 </label>
                               
             </ContCheck>
@@ -179,8 +223,7 @@ export default class FormCadastro extends React.Component {
             className="bg-gray-300 max-w-full focus:outline-none text-gray-700"
             onChange={this.handleInfo}
             value={this.state.inputInfo}
-            />
-          
+            />          
       </FormInfo>
                       
       <button 
