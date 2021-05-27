@@ -4,6 +4,8 @@ import axios from "axios";
 import Footer from '../components/Footer/Footer'
 import Header from '../components/Header/Header'
 import Filtro from '../components/Filtro/Filtro'
+import Design from '../components/Design/Design'
+
 
 export default class Home extends React.Component {
 	state = {
@@ -88,6 +90,7 @@ export default class Home extends React.Component {
 		return (
 			<div>
 				<Header />
+				<Design />
 				<Filtro
 					getAllJobs={this.getAllJobs}
 					servicos={this.state.servicos}
@@ -104,7 +107,7 @@ export default class Home extends React.Component {
 				<CardPost 
 					getAllJobs={this.getAllJobs}
 					servicos={this.ordenarListaFiltrada }
-				/>
+				/>			
 				<Footer />
 			</div>
 		)
