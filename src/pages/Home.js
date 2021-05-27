@@ -7,7 +7,11 @@ import Filtro from '../components/Filtro/Filtro'
 
 export default class Home extends React.Component {
 	state = {
-		servicos: []
+		servicos: [],
+		ordenar: "decrescente",
+		valorMax: "",
+		valorMin: "",
+		inputSer: "",	
 	};
 
 	componentDidMount() {
@@ -22,23 +26,84 @@ export default class Home extends React.Component {
 		try {
 			const res = await axios.get(`${URL}`, headers);
 			this.setState({ servicos: res.data.jobs });
-			console.log(this.state.servicos);
+			// console.log( "requisicao", this.state.servicos);
 		} catch (error) {
 			alert(error);
 		}
 	};
 
-	render() {
+	ordenarListaFiltrada = () => {
+		let valorMax
+		let valorMin
+
+		if (this.state.valorMax === "" ) {
+		  valorMax = Infinity
+		} else {
+			valorMax =this.state.valorMax
+		}
+		
+		if (this.state.valorMin === "" ) {
+			valorMin = -Infinity
+		} else {
+			valorMin = this.state.valorMin
+		}
+		
+		return 	this.state.servicos
+		  .filter(servico => servico.price >= valorMin)			  
+		  .filter(servico => servico.price <= valorMax)			
+		  .filter(servico => servico.title.includes(this.state.inputSer))
+		  .sort((a, b) => {
+			switch (this.state.ordenar){
+				case ("crescente"):
+					return a.price - b.price;
+				case ("decrescente"):
+					return b.price - a.price;
+				case ("titulo"):
+					return a.title - b.title;
+				case ("prazo"):
+					return a.duedate - b.duedate;
+			}
+		  })	
+	  };
+	
+	  handleServico = (e) => {
+		this.setState({inputSer: e.target.value })
+	  }
+	
+	  handleVMax = (e) => {
+		this.setState({valorMax: e.target.value })
+	  }
+	
+	  handleVMin = (e) => {
+		this.setState({valorMin: e.target.value })
+	  }
+	
+	  ordenarProdutos = (event) => {
+		this.setState({ ordenar: event.target.value });
+	  };
+
+
+	render() {	
+		
 		return (
 			<div>
 				<Header />
 				<Filtro
 					getAllJobs={this.getAllJobs}
 					servicos={this.state.servicos}
+					ordenarListaFiltrada={this.ordenarListaFiltrada}
+					ordenarProdutos ={this.ordenarProdutos}
+					handleVMin ={this.handleVMin}
+					handleVMax ={this.handleVMax}
+					handleServico ={this.handleServico}
+					valorMin  ={this.state.valorMin}
+					valorMax ={this.state.valorMax}
+					inputSer ={this.state.inputSer}
+					ordenar ={this.state.ordenar}
 				/>
 				<CardPost 
 					getAllJobs={this.getAllJobs}
-					servicos={this.state.servicos}
+					servicos={this.ordenarListaFiltrada }
 				/>
 				<Footer />
 			</div>

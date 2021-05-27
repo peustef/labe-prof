@@ -24,7 +24,10 @@ export default class CardPost extends React.Component {
   };
 
   render() {
-    const filterJobs = this.props.servicos.filter((servico) => {
+
+    const listaFiltrada = this.props.servicos()
+
+    const filterJobs = listaFiltrada.filter((servico) => {
       if (servico.taken === false) {
         return true;
       }
