@@ -1,13 +1,39 @@
 import React from "react";
 import Header from "../components/Header/Header";
+import axios from "axios";
 import { FaCreditCard } from "react-icons/fa";
 import Footer from "../components/Footer/Footer";
 
 export default class Carrinho extends React.Component {
+  state = {
+    jobsCarrinho: []
+  };
+  componentDidMount() {
+    this.getAllJobs();
+  }
+  getAllJobs = async () => {
+    const URL = "https://labeninjas.herokuapp.com/jobs";
+    const headers = {
+      headers: { Authorization: "6b5d3ade-aeb6-4364-91fa-b9a319e476c5" }
+    };
+    try {
+      const res = await axios.get(`${URL}`, headers);
+      this.setState({ jobsCarrinho: res.data.jobs });
+      console.log(this.state.jobsCarrinho);
+    } catch (error) {
+      alert(error);
+    }
+  };
   render() {
-    return (
-      <div>
-        <Header />
+    const servicosCarrinho = this.state.jobsCarrinho.filter((jobCart) => {
+      if (jobCart.taken === true) {
+        return true;
+      }
+    });
+    console.log(servicosCarrinho);
+
+    const servicos = servicosCarrinho.map((servico) => {
+      return (
         <div className="flex justify-center my-6">
           <div className="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
             <div className="flex-1">
@@ -41,7 +67,7 @@ export default class Carrinho extends React.Component {
                     </td>
                     <td>
                       <a href="#">
-                        <p className="mb-2 md:ml-4">Earphone</p>
+                        <p className="mb-2 md:ml-4">{servico.title}</p>
                         <form action="" method="POST">
                           <button type="submit" class="text-gray-700 md:ml-4">
                             <small>(Remover item)</small>
@@ -62,7 +88,7 @@ export default class Carrinho extends React.Component {
                     </td>
                     <td className="hidden text-right md:table-cell">
                       <span className="text-sm lg:text-base font-medium">
-                        R$ 150,00
+                        R$ {servico.price},00
                       </span>
                     </td>
                     <td className="text-right">
@@ -211,6 +237,12 @@ export default class Carrinho extends React.Component {
             </div>
           </div>
         </div>
+      );
+    });
+    return (
+      <div>
+        <Header />
+        <div>{servicos}</div>
         <Footer />
       </div>
     );
