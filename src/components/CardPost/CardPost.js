@@ -37,6 +37,7 @@ export default class CardPost extends React.Component {
       .post(`${URL}/${jobId}`, body, headers)
       .then((res) => {
         alert("Aula adicionada ao carrinho");
+        this.getAllJobs();
       })
       .catch((err) => {
         alert(err.message);
@@ -73,7 +74,7 @@ export default class CardPost extends React.Component {
             </h1>
 
             <button
-              class="px-6 py-2 bg-blue-600 text-white text-lg  font-semibold rounded-full hover:bg-blue-800 inline-flex items-center "
+              className="px-6 py-2 bg-blue-600 text-white text-lg  font-semibold rounded-full hover:bg-blue-800 inline-flex items-center "
               onClick={() => this.updateJob(job.id)}
             >
               <HiShoppingCart />
