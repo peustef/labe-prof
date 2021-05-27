@@ -2,9 +2,7 @@ import React from "react";
 import "../../tailwind.output.css";
 
 export default class Filtro extends React.Component {
-  state = {
-    ordenar: "decrescente"
-  };
+
   // ordenarProdutos = (event) => {
   //   this.setState({ ordenar: event.target.value });
   // };

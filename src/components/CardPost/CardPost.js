@@ -3,27 +3,6 @@ import { HiShoppingCart } from "react-icons/hi";
 import axios from "axios";
 
 export default class CardPost extends React.Component {
-  state = {
-    servicos: []
-  };
-
-  componentDidMount() {
-    this.getAllJobs();
-  }
-
-  getAllJobs = async () => {
-    const URL = "https://labeninjas.herokuapp.com/jobs";
-    const headers = {
-      headers: { Authorization: "6b5d3ade-aeb6-4364-91fa-b9a319e476c5" }
-    };
-    try {
-      const res = await axios.get(`${URL}`, headers);
-      this.setState({ servicos: res.data.jobs });
-      console.log(this.state.servicos);
-    } catch (error) {
-      alert(error);
-    }
-  };
 
   updateJob = (jobId) => {
     const URL = "https://labeninjas.herokuapp.com/jobs";
@@ -45,7 +24,7 @@ export default class CardPost extends React.Component {
   };
 
   render() {
-    const filterJobs = this.state.servicos.filter((servico) => {
+    const filterJobs = this.props.servicos.filter((servico) => {
       if (servico.taken === false) {
         return true;
       }
