@@ -14,7 +14,7 @@ export default function Footer() {
             <ContainerSecoes>
                 <Secao>
                     <h3>Empresa</h3>
-                    <a href='#'>Sobre nós</a>
+                    <a href='/SobreNos'>Sobre nós</a>
                     <a href='#'>Contato</a>
                 </Secao>
                 <Secao>
@@ -25,7 +25,7 @@ export default function Footer() {
                     </div>
                     <div>
                         <IoCall />
-                        <a href='#'>(21) 55555-9999</a>
+                        <a href='#'>(11) 55555-9999</a>
                     </div>
 
                 </Secao>
