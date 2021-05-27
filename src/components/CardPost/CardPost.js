@@ -31,6 +31,9 @@ export default class CardPost extends React.Component {
     });
 
     const jobs = filterJobs.map((job) => {
+      
+      let num = Math.floor(Math.random() * 100 + 1)
+
       return (
         <div
           key={job.id}
@@ -44,8 +47,8 @@ export default class CardPost extends React.Component {
           </div>
           <img
             className="h-56 w-full object-cover mt-2"
-            src="https://blog.academia.com.br/wp-content/uploads/2019/02/273098-entenda-qual-e-o-papel-do-professor-na-educacao-dos-alunos.jpg"
-            alt="PROFESSORA"
+            src= {`https://picsum.photos/200/300?random=${num}`}
+            alt="foto aula/professor"
           />
           <div className="flex items-center justify-between px-4 py-2 bg-gray-200">
             <h1 className="text-blue-700 font-bold text-xl">
