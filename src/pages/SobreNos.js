@@ -3,6 +3,7 @@ import Design from '../components/Design/Design'
 import Footer from '../components/Footer/Footer'
 import Header from '../components/Header/Header'
 import "../tailwind.output.css"
+import GlobalStyle from '../style/global';
 
 export default class SobreNos extends React.Component {
     render(){
@@ -16,6 +17,7 @@ export default class SobreNos extends React.Component {
                     <h3 className="text-black  uppercase text-center mb-48">LABEPROF é composto por quase 100 colaboradores situados na Embaixada do Intercâmbio de Saberes prontos a transmitir suas paixões em 28 países e 14 línguas.</h3>
                 </div>
                 <Footer />
+                <GlobalStyle />
             </div>
         )
     }

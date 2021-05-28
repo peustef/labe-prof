@@ -5,6 +5,7 @@ import Header from '../components/Header/Header'
 import "../tailwind.output.css"
 import imgContato from "../img/Contato.jpg"
 import styled from 'styled-components'
+import GlobalStyle from '../style/global';
 
 const ContainerContato = styled.div`
 width: 100vw;
@@ -30,6 +31,7 @@ export default class Contato extends React.Component {
                 </ContainerContato>
 
                 <Footer />
+                <GlobalStyle />
             </div>
         )
     }

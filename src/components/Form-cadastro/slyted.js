@@ -7,11 +7,16 @@ export const ContainerForm = styled.div`
   gap: 2em;
   width: 60%;
   height: 100%;
+  div {
+    justify-content: justify;
+  }
 `
 
 export const FormLine = styled.div`
-  display: flex; 
-  justify-content: space-between ;        
+  display: flex;
+  input {
+    margin-left: 2rem;
+  }
 `
 export const FormInfo = styled.div`
   display: flex; 
