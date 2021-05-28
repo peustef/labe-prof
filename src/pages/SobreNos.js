@@ -15,6 +15,10 @@ const ContainerSobreNos = styled.div`
     h3 {
         margin-bottom: 20px;
     }
+
+    @media(max-width: 700px){
+        height: 100%;
+    }
 `
 
 export default class SobreNos extends React.Component {
