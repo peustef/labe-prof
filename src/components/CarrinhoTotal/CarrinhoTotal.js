@@ -41,7 +41,7 @@ export default class CarrinhoTotal extends React.Component {
                       </div>
                             </div>
                             <form className="flex rounded-md text-base p-4 font-medium uppercase ml-auto" name="formasPagamento" id="formasPagamento">
-                                <label for="cars">Formas de pagamento:</label>
+                                <label for="formasPagamento">Formas de pagamento:</label>
 
                                 <select className="flex bg-blue-800 rounded-md text-base p-4 font-medium	text-white uppercase ml-auto" name="formasPagamento" id="formasPagamento">
                                     <option value="dinheiro">Dinheiro</option>
