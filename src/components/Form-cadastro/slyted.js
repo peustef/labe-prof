@@ -37,7 +37,6 @@ export const FormInfo = styled.div`
   display: flex; 
   flex-direction: column;    
 
-
   textarea {
     padding: 6px;
     border-radius: 5px;
