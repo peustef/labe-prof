@@ -22,6 +22,10 @@ const ContainerImg = styled.div`
 const ImgLateral = styled.img`
   max-height: 100%;
   max-width: 100%;
+
+  @media(max-width: 700px){
+    display: none;
+  }
 `
 
 export default class Cadastro extends React.Component {
