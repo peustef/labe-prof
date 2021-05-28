@@ -90,7 +90,7 @@ export default class Home extends React.Component {
 		return (
 			<div>
 				<Header />
-				<Design />
+				<Design />	
 				<Filtro
 					getAllJobs={this.getAllJobs}
 					servicos={this.state.servicos}
@@ -103,12 +103,12 @@ export default class Home extends React.Component {
 					valorMax ={this.state.valorMax}
 					inputSer ={this.state.inputSer}
 					ordenar ={this.state.ordenar}
-				/>
+				/> 
 				<CardPost 
 					getAllJobs={this.getAllJobs}
 					servicos={this.ordenarListaFiltrada }
-				/>			
-				<Footer />
+				/>		
+				<Footer /> 
 			</div>
 		)
 
