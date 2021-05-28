@@ -40,15 +40,15 @@ export default class Carrinho extends React.Component {
     axios
       .post(`${URL}/${jobId}`, body, headers)
       .then((res) => {
-        toast.info ('Item removido do carrinho', {
-          posição : "superior direito" ,
-          autoClose : 5000 ,
-          hideProgressBar : false ,
-          closeOnClick : true ,
-          pauseOnHover : true ,
-          arrastável : true ,
-          progresso : undefined ,
-          });
+        toast.info('Item removido do carrinho', {
+          posição: "superior direito",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          arrastável: true,
+          progresso: undefined,
+        });
         this.getAllJobs();
       })
       .catch((err) => {
@@ -60,7 +60,7 @@ export default class Carrinho extends React.Component {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          });
+        });
       });
   };
 
@@ -70,7 +70,7 @@ export default class Carrinho extends React.Component {
         this.removerJob(job.id)
       }
     })
-    
+
   }
 
   render() {
