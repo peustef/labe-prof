@@ -58,12 +58,6 @@ export default class Filtro extends React.Component {
               onChange={this.props.handleVMax}
             />
 
-          {/* <button 
-              onClick={this.props.ordenarListaFiltrada}
-              className=" text-white font-semibold bg-blue-400 hover:bg-blue-600 p-2 m-1 rounded "
-              >Buscar
-          </button> */}
-
         </ContainerOrdenacao>
         <div className="flex justify-center items-center p-2 m-2 px-5">
 
