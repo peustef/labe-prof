@@ -17,6 +17,10 @@ padding: 2%;
 
 const Imglateral = styled.img`
 max-width: 500px;
+
+@media(max-width: 700px){
+    display: none;
+}
 `
 
 export default class Contato extends React.Component {

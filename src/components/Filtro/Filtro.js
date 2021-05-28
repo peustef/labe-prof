@@ -1,6 +1,6 @@
 import React from "react";
 import "../../tailwind.output.css";
-import {ContainerFiltro, Pesquisa} from './Styled'
+import {ContainerFiltro, Pesquisa, ContainerOrdenacao} from './Styled'
 
 export default class Filtro extends React.Component {
 
@@ -22,7 +22,7 @@ export default class Filtro extends React.Component {
                   strokeLinejoin="round"
                   strokeWidth="2"
                   viewBox="0 0 24 24"
-                  className="w-6 h-6"
+                  className="w-4 h-4"
                 >
                   <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
@@ -42,7 +42,7 @@ export default class Filtro extends React.Component {
 
           </Pesquisa>
         </div>
-        <div className="flex-col justify-center items-center">
+        <ContainerOrdenacao className="flex-col justify-center items-center">
             <input
               className="bg-blue-200 m-1 rounded-md pl-1 py-2 text-sm"
               placeholder="Valor Mínimo"
@@ -58,13 +58,8 @@ export default class Filtro extends React.Component {
               onChange={this.props.handleVMax}
             />
 
-          {/* <button 
-              onClick={this.props.ordenarListaFiltrada}
-              className=" text-white font-semibold bg-blue-400 hover:bg-blue-600 p-2 m-1 rounded "
-              >Buscar
-          </button> */}
 
-        </div>
+        </ContainerOrdenacao>
         <div className="flex justify-center items-center p-2 m-2 px-5">
 
           <label>

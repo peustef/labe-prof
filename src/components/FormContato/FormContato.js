@@ -3,12 +3,8 @@ import styled from 'styled-components';
 import "../../tailwind.output.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {ContainerForm} from './Styled'
 
-
-const ContainerForm = styled.div `
-padding: 1em 1em;
-width: 50%;
-`
 
 export default class FormContato extends React.Component {
     state = {
