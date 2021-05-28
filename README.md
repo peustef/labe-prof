@@ -1,68 +1,73 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<strong>Projeto Labeprof</strong>
+<br>
+<img src="https://user-images.githubusercontent.com/75874462/120020551-3f350f00-bfc0-11eb-92c2-e0f8170986ac.png" >
 
-## Available Scripts
+<em>A maior rede de tutores. Labeprof ajuda professores e alunos a se encontrarem. </em>
+<br>
 
-In the project directory, you can run:
 
-### `npm start`
+### Possui como depedência as seguintes libs:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<ul>
+  <li>react-toastify</li>
+  <li>Tailwind CSS</li>
+  <li>styled-components</li>
+  <li>axios</li>
+  <li>react-router-dom</li>
+</ul>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Integrantes do grupo de desenvolvimento
+<table>
+  <tr>
+    <th>Bianca de Souza Leonardo</th>
+        <th>Fabricia da Silva Sant´Anna</th>
+        <th>Renato Marinho de Freitas</th>
+    <th>Rodrigo Brezolin Buquera</th>
+    <th>Pedro Augusto Stefani Saldanha</th>
+  </tr>
+  <tr>
+    <td>
+  <img width='150px' height='150px' src='https://ca.slack-edge.com/TLAVDH7C2-U01SSF31BND-3d4dfb475a47-512' >
+    </td>
+        <td>
+  <img width='150px' height='150px' src='https://ca.slack-edge.com/TLAVDH7C2-U01SE37R2RH-62f9db0a5aac-512' >
+    </td>
+        <td>
+  <img width='150px' height='150px' src='https://ca.slack-edge.com/TLAVDH7C2-U01T3LJNPSL-2a067c95b2ec-512' >
+    </td>
+     <td>
+  <img width='150px' height='150px' src='https://ca.slack-edge.com/TLAVDH7C2-U01SL1T90SG-f0b9ca70f777-512' >
+    </td>
+     <td>
+  <img width='150px' height='150px' src='https://ca.slack-edge.com/TLAVDH7C2-U01SAQ2BWDB-5fd495bf074a-512' >
+    </td>
+  </tr>
+<table>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Rodando localmente
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h4>1º | Faça o clone do repo: </h4>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<code>
+    git clone https://github.com/future4code/paiva-marketplace2.git
+</code>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
+<br>
 
-### `npm run eject`
+<h4>2º | Instale as dependências: </h4>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<code>
+   npm install
+</code>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<h4>3º | Inicie o servidor: </h4>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<code>
+   npm run start
+</code>
