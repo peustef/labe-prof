@@ -9,7 +9,7 @@ import {ContainerHeader, ContainerMenu} from './Styled'
 export default class Header extends React.Component {
   render() {
     return (
-      <ContainerHeader className="w-full grid grid-cols-3 bg-white shadow-md items-center justify-center md:flex-row">
+      <ContainerHeader className="w-full grid grid-cols-3 bg-white shadow items-center justify-center md:flex-row">
 
         <div className="col-start-2">
           <div className=" md:flex items-center py-2 px-8 ">
@@ -26,6 +26,9 @@ export default class Header extends React.Component {
         <ContainerMenu className="col-start-3 flex justify-center items-center md:flex-row">
           <Link to="/cadastro" className="text-gray-800 rounded hover:bg-blue-800 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">
             <button>Dar aulas</button>
+          </Link>
+          <Link to="/SobreNos" className="text-gray-800 rounded hover:bg-blue-800 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">
+            <button>Sobre nós</button>
           </Link>
           <Link to="/carrinho/:produtosCarrinho" className="text-gray-800 rounded hover:bg-blue-800 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">
             <button>
