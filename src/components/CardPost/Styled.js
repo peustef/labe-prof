@@ -8,6 +8,7 @@ export const ContainerCard = styled.div`
 `
 
 export const Card = styled.div`
+    width: 40rem;
     height: 440px;
     justify-content: space-evenly;
     align-content: space-between;

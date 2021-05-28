@@ -22,7 +22,7 @@ export default class CardPost extends React.Component {
       .then((res) => {
         // Mensagem de adicionado ao carrinho
         toast.success('Adicionado ao carrinho', {
-          position: "top-right",
+          position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -63,7 +63,7 @@ export default class CardPost extends React.Component {
       return (
         <Card
           key={job.id}
-          className="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden my-10 ml-8 bg-gray-200 "
+          className="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden my-10 bg-gray-200"
         >
           <div className="px-4 py-2">
             <h1 className="text-blue-700 font-bold text-2xl uppercase  ">
@@ -97,7 +97,7 @@ export default class CardPost extends React.Component {
     });
     return (
       <div>
-        <ContainerCard className="grid lg:grid-cols-3 md:grid-cols-2 justify-center items-center">
+        <ContainerCard className="flex flex-wrap mx-5 justify-center items-center gap-4">
           {jobs}
         </ContainerCard>
 

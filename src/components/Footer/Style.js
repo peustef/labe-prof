@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerFooter = styled.div`
+    margin-bottom: 0;
     background-color: #f2f2f2;
     padding: 10px 0;
 `
