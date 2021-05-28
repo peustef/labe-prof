@@ -25,7 +25,8 @@ export const ContainerForm = styled.div`
 
 export const FormLine = styled.div`
   display: flex; 
-  justify-content: space-between ;   
+  justify-content: space-between ;  
+
 
   @media(max-width: 700px){
     display: flex;
@@ -35,6 +36,12 @@ export const FormLine = styled.div`
 export const FormInfo = styled.div`
   display: flex; 
   flex-direction: column;    
+
+
+  textarea {
+    padding: 6px;
+    border-radius: 5px;
+  } 
 `
 
 export const ContCheck = styled.div`
