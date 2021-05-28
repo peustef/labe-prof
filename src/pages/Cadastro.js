@@ -5,6 +5,7 @@ import FormCadastro from "../components/Form-cadastro/FormCadastro";
 import Header from "../components/Header/Header";
 import Prof from "../img/prof.jpg"
 import "../tailwind.output.css";
+import GlobalStyle from '../style/global';
 
 const ContainerPrincipal = styled.div ` 
   display: flex;
@@ -41,6 +42,7 @@ export default class Cadastro extends React.Component {
         </ContainerPrincipal>   
                 
         <Footer />
+        <GlobalStyle />
 
       </div>
     );

@@ -25,7 +25,6 @@
   box-sizing: border-box;
 }
 body {
-  height: 100vh;
 }
 /**
  * Render the `main` element consistently in IE.

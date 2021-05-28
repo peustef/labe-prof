@@ -6,6 +6,7 @@ import Footer from "../components/Footer/Footer";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import GlobalStyle from '../style/global';
 
 export default class Carrinho extends React.Component {
   state = {
@@ -155,6 +156,7 @@ export default class Carrinho extends React.Component {
         </div>
         <Footer />
         <ToastContainer />
+        <GlobalStyle />
       </div>
     );
   }

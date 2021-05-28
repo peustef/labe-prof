@@ -5,6 +5,7 @@ import Footer from '../components/Footer/Footer'
 import Header from '../components/Header/Header'
 import Filtro from '../components/Filtro/Filtro'
 import Design from '../components/Design/Design'
+import GlobalStyle from '../style/global';
 
 
 export default class Home extends React.Component {
@@ -109,6 +110,7 @@ export default class Home extends React.Component {
 					servicos={this.ordenarListaFiltrada }
 				/>		
 				<Footer /> 
+				<GlobalStyle />
 			</div>
 		)
 
