@@ -16,7 +16,12 @@ padding: 2%;
 
 button{
     border-radius: 5px;
-    padding: 6px 10px;
+    padding: 8px 12px;
+    background-color: #346FCE;
+
+    :hover{
+        background-color: #2C5282;
+    }
 }
 `
 
