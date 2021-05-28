@@ -3,7 +3,6 @@ import Header from "../components/Header/Header";
 import axios from "axios";
 import CarrinhoTotal from "../components/CarrinhoTotal/CarrinhoTotal"
 import Footer from "../components/Footer/Footer";
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import GlobalStyle from '../style/global';
@@ -12,9 +11,11 @@ export default class Carrinho extends React.Component {
   state = {
     jobsCarrinho: []
   };
+
   componentDidMount() {
     this.getAllJobs();
   }
+
   getAllJobs = async () => {
     const URL = "https://labeninjas.herokuapp.com/jobs";
     const headers = {
@@ -23,7 +24,7 @@ export default class Carrinho extends React.Component {
     try {
       const res = await axios.get(`${URL}`, headers);
       this.setState({ jobsCarrinho: res.data.jobs });
-      console.log(this.state.jobsCarrinho);
+      
     } catch (error) {
       alert(error);
     }
@@ -70,7 +71,6 @@ export default class Carrinho extends React.Component {
         this.removerJob(job.id)
       }
     })
-
   }
 
   render() {
@@ -79,8 +79,7 @@ export default class Carrinho extends React.Component {
         return true;
       }
     });
-    console.log(servicosCarrinho);
-
+ 
     const servicos = servicosCarrinho.map((servico) => {
 
       let num = Math.floor(Math.random() * 100 + 1)
@@ -103,7 +102,6 @@ export default class Carrinho extends React.Component {
             <button onClick={() => this.removerJob(servico.id)} type="submit" className="text-gray-700 md:ml-4">
               <small>(Remover item)</small>
             </button>
-
 
           </td>
           <td className="hidden text-right md:table-cell">
@@ -136,7 +134,7 @@ export default class Carrinho extends React.Component {
                     </tr>
                   </thead>
                   <tbody>
-                    {servicos}
+                    {servicosCarrinho.length ? servicos : <div>Seu carrinho está vazio</div> }
                   </tbody>
                 </table>
                 <button onClick={this.removerTodos} className="flex bg-blue-800 rounded-md text-base p-4 font-medium	text-white hover:bg-red-600 uppercase ml-auto">

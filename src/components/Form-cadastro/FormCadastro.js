@@ -12,10 +12,6 @@ export default class FormCadastro extends React.Component {
     inputValor: "",
     inputInfo: "",
     inputData: "",
-    checkDin: "",
-    checkCar: "",
-    checkBol: "",
-    checkPix: "",
     checkedD: false,
     checkedC: false,
     checkedB: false,
@@ -41,63 +37,35 @@ export default class FormCadastro extends React.Component {
   }
 
   handleCheckDin = (e) => {
-    if (e.target.checked) {
       this.setState({
-        checkDin: "dinheiro",
         checkedD: !this.state.checkedD,
       })
-    } else {
-      this.setState({
-        checkDin: "",
-        checkedD: !this.state.checkedD,
-      })
-    }
   }
 
   handleCheckCar = (e) => {
-    if (e.target.checked) {
-      this.setState({
-        checkCar: "cartão",
+      this.setState({      
         checkedC: !this.state.checkedC
       })
-    } else {
-      this.setState({
-        checkCar: "",
-        checkedC: !this.state.checkedC
-      })
-    }
   }
 
   handleCheckBol = (e) => {
-    if (e.target.checked) {
       this.setState({
-        checkBol: "boleto",
         checkedB: !this.state.checkedB
       })
-    } else {
-      this.setState({
-        checkBol: "",
-        checkedB: !this.state.checkedB
-      })
-    }
   }
 
   handleCheckPix = (e) => {
-    if (e.target.checked) {
       this.setState({
-        checkPix: "pix",
         checkedP: !this.state.checkedP
       })
-    } else {
-      this.setState({
-        checkPix: "",
-        checkedP: !this.state.checkedP
-      })
-    }
   }
 
   cadastraAula = () => {
-    const Pgt = [this.state.checkDin, this.state.checkCar, this.state.checkBol, this.state.checkPix]
+    const pgtDin = this.state.checkedD ? "dinheiro" : ""
+    const pgtCar = this.state.checkedC ? "Cartão" : ""
+    const pgtBol = this.state.checkedB ? "Boleto" : ""
+    const pgtPix = this.state.checkedP ? "Pix" : ""
+    const Pgt = [pgtDin, pgtCar, pgtBol, pgtPix]
     const URL = "https://labeninjas.herokuapp.com/jobs"
     const headers = { headers: { Authorization: "6b5d3ade-aeb6-4364-91fa-b9a319e476c5" } }
     const body = {
@@ -108,7 +76,7 @@ export default class FormCadastro extends React.Component {
       "dueDate": this.state.inputData,
     }
 
-    if (this.state.inputTema === "" || this.state.inputValor === "" || this.state.inputInfo === "" || this.state.inputData === "" || (this.state.checkDin === "" && this.state.checkCar === "" && this.state.checkBol === "" && this.state.checkPix === "")) {
+    if (this.state.inputTema === "" || this.state.inputValor === "" || this.state.inputInfo === "" || this.state.inputData === "" || (this.state.checkedD === "" && this.state.checkedC === "" && this.state.checkedB === "" && this.state.checkedP === "")) {
       toast.error('Por favor preencha todos os campos', {
         position: "top-right",
         autoClose: 5000,
@@ -259,7 +227,7 @@ export default class FormCadastro extends React.Component {
           onClick={this.cadastraAula}
           className="bg-blue-500 px-5 py-2 text-lg font-semibold tracking-wider text-white rounded-full hover:bg-blue-600"
         >Cadastrar
-      </button>
+        </button>
         <ToastContainer />
       </ContainerForm>
 
