@@ -120,8 +120,8 @@ export default class Carrinho extends React.Component {
     return (
       <div>
         <Header />
-        <div>
-          <div className="flex justify-center my-6">
+        <div className="h-full">
+          <div className="flex justify-center my-24">
             <div className="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
               <div className="flex-1">
                 <table className="w-full text-sm lg:text-base" cellSpacing="0">
