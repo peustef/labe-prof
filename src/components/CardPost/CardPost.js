@@ -22,7 +22,7 @@ export default class CardPost extends React.Component {
       .then((res) => {
         // Mensagem de adicionado ao carrinho
         toast.success('Adicionado ao carrinho', {
-          position: "top-right",
+          position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
