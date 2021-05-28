@@ -1,4 +1,6 @@
-<strong>Projeto Labeprof</strong>
+## <strong>Projeto Labeprof</strong>
+<br>
+- Projeto desenvolvido em ReactJS
 <br>
 <img src="https://user-images.githubusercontent.com/75874462/120020551-3f350f00-bfc0-11eb-92c2-e0f8170986ac.png" >
 
@@ -8,12 +10,13 @@
 
 ### Possui como depedência as seguintes libs:
 
-<ul>
-  <li>react-toastify</li>
+<ul>  
   <li>Tailwind CSS</li>
   <li>styled-components</li>
   <li>axios</li>
+  <li>react-toastify</li>
   <li>react-router-dom</li>
+  <li>react-icons</li>
 </ul>
 
 ### Integrantes do grupo de desenvolvimento
