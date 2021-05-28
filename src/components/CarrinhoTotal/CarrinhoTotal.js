@@ -40,6 +40,16 @@ export default class CarrinhoTotal extends React.Component {
                                     R${this.props.valorTotal},00
                       </div>
                             </div>
+                            <form className="flex rounded-md text-base p-4 font-medium uppercase ml-auto" name="formasPagamento" id="formasPagamento">
+                                <label for="formasPagamento">Formas de pagamento:</label>
+
+                                <select className="flex bg-blue-800 rounded-md text-base p-4 font-medium	text-white uppercase ml-auto" name="formasPagamento" id="formasPagamento">
+                                    <option value="dinheiro">Dinheiro</option>
+                                    <option value="cartao">Cartão</option>
+                                    <option value="boleto">Boleto</option>
+                                    <option value="pix">Pix</option>
+                                </select>
+                            </form>
                             <Link to="/">
                                 <button onClick={this.botaoFinalizar} className="flex justify-center items-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-blue-800 rounded-full shadow item-center hover:bg-blue-700 focus:shadow-outline focus:outline-none">
                                     <FaCreditCard className="text-blue-500 w-8 h-8" />
