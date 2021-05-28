@@ -7,7 +7,6 @@ import Filtro from '../components/Filtro/Filtro'
 import Design from '../components/Design/Design'
 
 
-
 export default class Home extends React.Component {
 	state = {
 		servicos: [],

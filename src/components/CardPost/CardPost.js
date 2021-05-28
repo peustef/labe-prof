@@ -1,7 +1,10 @@
 import React from "react";
 import { HiShoppingCart } from "react-icons/hi";
 import axios from "axios";
-import {ContainerCard, Card} from './Styled'
+import { ContainerCard, Card } from './Styled'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default class CardPost extends React.Component {
@@ -17,11 +20,29 @@ export default class CardPost extends React.Component {
     axios
       .post(`${URL}/${jobId}`, body, headers)
       .then((res) => {
-        alert("Aula adicionada ao carrinho");
+        // Mensagem de adicionado ao carrinho
+        toast.success('Adicionado ao carrinho', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
         this.props.getAllJobs();
       })
       .catch((err) => {
-        alert(err.message);
+        // Erro
+        toast.error('Erro ao adicionar ao carrinho', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
       });
   };
 
@@ -36,7 +57,7 @@ export default class CardPost extends React.Component {
     });
 
     const jobs = filterJobs.map((job) => {
-      
+
       let num = Math.floor(Math.random() * 100 + 1)
 
       return (
@@ -52,7 +73,7 @@ export default class CardPost extends React.Component {
           </div>
           <img
             className="h-56 w-full object-cover mt-2"
-            src= {`https://picsum.photos/200/300?random=${num}`}
+            src={`https://picsum.photos/200/300?random=${num}`}
             alt="foto aula/professor"
           />
           <di className="flex items-center justify-between px-4 py-2 bg-gray-200">
@@ -67,7 +88,7 @@ export default class CardPost extends React.Component {
               className="px-6 py-2 bg-blue-600 text-white text-lg  font-semibold rounded-full hover:bg-blue-800 inline-flex items-center "
               onClick={() => this.updateJob(job.id)}
             >
-              
+
               Adicionar <HiShoppingCart />
             </button>
           </div>
@@ -75,9 +96,13 @@ export default class CardPost extends React.Component {
       );
     });
     return (
-      <ContainerCard className="grid lg:grid-cols-3 md:grid-cols-2 justify-center items-center">
-        {jobs}
-      </ContainerCard>
+      <div>
+        <ContainerCard className="grid lg:grid-cols-3 md:grid-cols-2 justify-center items-center">
+          {jobs}
+        </ContainerCard>
+
+        <ToastContainer />
+      </div>
     );
   }
 }

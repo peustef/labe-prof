@@ -4,6 +4,9 @@ import axios from "axios";
 import CarrinhoTotal from "../components/CarrinhoTotal/CarrinhoTotal"
 import Footer from "../components/Footer/Footer";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default class Carrinho extends React.Component {
   state = {
     jobsCarrinho: []
@@ -36,10 +39,27 @@ export default class Carrinho extends React.Component {
     axios
       .post(`${URL}/${jobId}`, body, headers)
       .then((res) => {
+        toast.info ('Item removido do carrinho', {
+          posição : "superior direito" ,
+          autoClose : 5000 ,
+          hideProgressBar : false ,
+          closeOnClick : true ,
+          pauseOnHover : true ,
+          arrastável : true ,
+          progresso : undefined ,
+          });
         this.getAllJobs();
       })
       .catch((err) => {
-        alert(err.message);
+        toast.error('Erro ao remover item do carrinho', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
       });
   };
 
@@ -49,6 +69,7 @@ export default class Carrinho extends React.Component {
         this.removerJob(job.id)
       }
     })
+    
   }
 
   render() {
@@ -60,12 +81,15 @@ export default class Carrinho extends React.Component {
     console.log(servicosCarrinho);
 
     const servicos = servicosCarrinho.map((servico) => {
+
+      let num = Math.floor(Math.random() * 100 + 1)
+
       return (
         <tr key={servico.id}>
           <td className="hidden pb-4 md:table-cell">
 
             <img
-              src="https://blog.academia.com.br/wp-content/uploads/2019/02/273098-entenda-qual-e-o-papel-do-professor-na-educacao-dos-alunos.jpg"
+              src={`https://picsum.photos/300/200?random=${num}`}
               className="w-20 rounded"
               alt="Thumbnail"
             />
@@ -130,6 +154,7 @@ export default class Carrinho extends React.Component {
 
         </div>
         <Footer />
+        <ToastContainer />
       </div>
     );
   }

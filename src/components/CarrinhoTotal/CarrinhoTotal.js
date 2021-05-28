@@ -3,6 +3,9 @@ import axios from "axios";
 import { FaCreditCard } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default class CarrinhoTotal extends React.Component {
     botaoFinalizar = () => {
@@ -18,7 +21,7 @@ export default class CarrinhoTotal extends React.Component {
 
         return (
             <div>
-
+                <ToastContainer />
                 <div className="flex justify-center my-4 mt-6 -mx-2 lg:flex">
                     <div className="lg:px-2 lg:w-1/2 ">
                         <div className="p-4 bg-gray-100 rounded-full">
