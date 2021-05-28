@@ -15,7 +15,7 @@ export default function Footer() {
                 <Secao>
                     <h3>Empresa</h3>
                     <a href='/SobreNos'>Sobre nós</a>
-                    <a href='#'>Contato</a>
+                    <a href='/Contato'>Contato</a>
                 </Secao>
                 <Secao>
                     <h3>Encontre-nos</h3>
