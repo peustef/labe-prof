@@ -61,7 +61,7 @@ export default class Home extends React.Component {
 				case ("decrescente"):
 					return b.price - a.price;
 				case ("titulo"):
-					return a.title - b.title;
+					return a.title.localeCompare(b.title);
 				case ("prazo"):
 					return a.duedate - b.duedate;
 			}
