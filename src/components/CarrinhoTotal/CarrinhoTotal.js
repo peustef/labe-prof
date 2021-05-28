@@ -4,6 +4,16 @@ import { Link } from "react-router-dom";
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import styled from "styled-components";
+
+const Botao = styled.button`
+    border-radius: 5px;
+`
+
+const Formulario  = styled.form`
+    display: flex;
+    align-items: center;
+`
 
 
 export default class CarrinhoTotal extends React.Component {
@@ -39,23 +49,23 @@ export default class CarrinhoTotal extends React.Component {
                                     R${this.props.valorTotal},00
                       </div>
                             </div>
-                            <form className="flex rounded-md text-base p-4 font-medium uppercase ml-auto" name="formasPagamento" id="formasPagamento">
+                            <Formulario className="flex rounded-md text-base p-2 font-medium uppercase ml-auto" name="formasPagamento" id="formasPagamento">
                                 <label for="formasPagamento">Formas de pagamento:</label>
 
-                                <select className="flex bg-blue-800 rounded-md text-base p-4 font-medium	text-white uppercase ml-auto" name="formasPagamento" id="formasPagamento">
+                                <select className="flex bg-blue-800 rounded-md text-base px-4 py-2 font-medium	text-white uppercase ml-auto" name="formasPagamento" id="formasPagamento">
                                     <option value="dinheiro">Dinheiro</option>
                                     <option value="cartao">Cartão</option>
                                     <option value="boleto">Boleto</option>
                                     <option value="pix">Pix</option>
                                 </select>
-                            </form>
+                            </Formulario>
                             <Link to="/">
-                                <button onClick={this.botaoFinalizar} className="flex justify-center items-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-blue-800 rounded-full shadow item-center hover:bg-blue-700 focus:shadow-outline focus:outline-none">
+                                <Botao onClick={this.botaoFinalizar} className="flex justify-center items-center px-4 py-2 mt-6 font-medium text-white uppercase bg-blue-800 shadow item-center hover:bg-blue-700 focus:shadow-outline focus:outline-none">
                                     <FaCreditCard className="text-blue-500 w-8 h-8" />
                                     <span className="ml-2 mt-5px text-base">
                                         Finalizar compra
                         </span>
-                                </button>
+                                </Botao>
                             </Link>
                         </div>
                     </div>

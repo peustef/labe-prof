@@ -137,7 +137,7 @@ export default class Carrinho extends React.Component {
                     {servicosCarrinho.length ? servicos : <div>Seu carrinho está vazio</div> }
                   </tbody>
                 </table>
-                <button onClick={this.removerTodos} className="flex bg-blue-800 rounded-md text-base p-4 font-medium	text-white hover:bg-red-600 uppercase ml-auto">
+                <button onClick={this.removerTodos} className="flex bg-blue-800 rounded-md text-base px-4 py-2 font-medium	text-white hover:bg-red-600 uppercase ml-auto">
                   Remover todos os itens
               </button>
 

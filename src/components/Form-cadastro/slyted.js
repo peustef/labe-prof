@@ -15,6 +15,12 @@ export const ContainerForm = styled.div`
     border-radius: 5px;
   }
 
+  button{
+    width: 20%;
+    padding: 4px 8px;
+    border-radius: 5px;
+  }
+
   @media(max-width: 700px){
     width: 100%;
     gap: 0;
@@ -90,16 +96,13 @@ export const ContCheck = styled.div`
 
   div {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
   input{
       margin-left:0.1em;
       
   }
-  /* label{
-    display: flex;
-    align-items: center;
-  }
-*/
   @media(max-width: 700px){
     div {
       flex-direction: row;

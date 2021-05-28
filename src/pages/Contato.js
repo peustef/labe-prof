@@ -13,6 +13,11 @@ height: 100%;
 display: flex;
 justify-content: space-around;
 padding: 2%;
+
+button{
+    border-radius: 5px;
+    padding: 6px 10px;
+}
 `
 
 const Imglateral = styled.img`

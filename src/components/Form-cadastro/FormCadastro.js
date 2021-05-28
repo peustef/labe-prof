@@ -227,7 +227,7 @@ export default class FormCadastro extends React.Component {
 
         <button
           onClick={this.cadastraAula}
-          className="bg-blue-500 px-5 py-2 text-lg font-semibold tracking-wider text-white rounded-full hover:bg-blue-600"
+          className="bg-blue-500 px-5 py-2 text-lg font-semibold tracking-wider text-white hover:bg-blue-600"
         >Cadastrar
         </button>
         <ToastContainer />

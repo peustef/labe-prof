@@ -21,20 +21,20 @@ export default function Footer() {
                     <h3>Encontre-nos</h3>
                     <div>
                         <ImLocation />
-                        <a href='#'>Rua Virtual, nº 27 - SP</a>
+                        <p href='#'>Rua Virtual, nº 27 - SP</p>
                     </div>
                     <div>
                         <IoCall />
-                        <a href='#'>(11) 55555-9999</a>
+                        <p href='#'>(11) 55555-9999</p>
                     </div>
 
                 </Secao>
                 <Secao>
                     <h3>Siga-nos</h3>
                     <Icones>
-                        <a href='https://www.facebook.com/' target='_blank'><FaFacebookSquare  className="w-6 h-6"/></a>
-                        <a href='https://twitter.com/' target='_blank'><FaTwitterSquare className="w-6 h-6"/></a>
-                        <a href='https://www.instagram.com/' target='_blank'><FaInstagramSquare className="w-6 h-6"/></a>
+                        <a href='https://www.facebook.com/' target='_blank'><FaFacebookSquare  className="w-8 h-8"/></a>
+                        <a href='https://twitter.com/' target='_blank'><FaTwitterSquare className="w-8 h-8"/></a>
+                        <a href='https://www.instagram.com/' target='_blank'><FaInstagramSquare className="w-8 h-8"/></a>
                     </Icones>
 
                 </Secao>

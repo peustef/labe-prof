@@ -5,6 +5,10 @@ export const ContainerCard = styled.div`
         display: flex;
         flex-direction: column;
     }
+
+    button{
+      border-radius: 5px;
+    }
 `
 
 export const Card = styled.div`
