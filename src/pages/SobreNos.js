@@ -8,6 +8,7 @@ import styled from 'styled-components'
 
 const ContainerSobreNos = styled.div`
     padding: 20px;
+    height: 50vh;
     h1{
         margin-top: 10px;
     }

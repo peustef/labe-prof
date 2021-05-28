@@ -46,6 +46,14 @@ export default class CardPost extends React.Component {
       });
   };
 
+  arrumaData = (d) =>{
+    const data =d.split("-")
+    const ano = data[0]
+    const mes = data[1]
+    const dia = data[2].slice(0, 2)    
+    return dia + "/" + mes + "/" + ano;
+  }
+
   render() {
 
     const listaFiltrada = this.props.servicos()
@@ -77,7 +85,7 @@ export default class CardPost extends React.Component {
             alt="foto aula/professor"
           />
           <div className="flex items-center justify-between px-4 py-2 bg-gray-200">
-            <span className="text-blue-700 font-bold text-sm">Prazo: {job.dueDate}</span>
+            <span className="text-blue-700 font-bold text-sm">Prazo: {this.arrumaData(job.dueDate)}</span>
           </div>
           <div className="flex items-center justify-between px-4 py-2 bg-gray-200">
             <h1 className="text-blue-700 font-bold text-xl">
