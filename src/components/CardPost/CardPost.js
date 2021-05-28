@@ -97,7 +97,7 @@ export default class CardPost extends React.Component {
     });
     return (
       <div>
-        <ContainerCard className="flex flex-wrap mx-5 justify-center items-center gap-16">
+        <ContainerCard className="flex flex-wrap mx-5 justify-center items-center gap-4">
           {jobs}
         </ContainerCard>
 
