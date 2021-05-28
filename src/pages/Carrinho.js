@@ -6,6 +6,15 @@ import Footer from "../components/Footer/Footer";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import GlobalStyle from '../style/global';
+import styled from "styled-components";
+
+const Botao = styled.button`
+  background-color: #346FCE;
+
+  :hover{
+    background-color: #2C5282;
+  }
+`
 
 export default class Carrinho extends React.Component {
   state = {
@@ -137,9 +146,9 @@ export default class Carrinho extends React.Component {
                     {servicosCarrinho.length ? servicos : <div>Seu carrinho está vazio</div> }
                   </tbody>
                 </table>
-                <button onClick={this.removerTodos} className="flex bg-blue-800 rounded-md text-base p-4 font-medium	text-white hover:bg-red-600 uppercase ml-auto">
+                <Botao onClick={this.removerTodos} className="flex bg-blue-800 rounded-md text-base px-4 py-2 font-medium	text-white hover:bg-red-600 uppercase ml-auto">
                   Remover todos os itens
-              </button>
+              </Botao>
 
 
                 <hr className="pb-6 mt-6" />

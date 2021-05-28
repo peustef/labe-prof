@@ -5,6 +5,15 @@ export const ContainerCard = styled.div`
         display: flex;
         flex-direction: column;
     }
+
+    button{
+      border-radius: 5px;
+      background-color: #346FCE;
+
+      :hover{
+        background-color: #2C5282;
+      }
+    }
 `
 
 export const Card = styled.div`
@@ -39,7 +48,7 @@ export const Card = styled.div`
         margin: 0;
     }
     @media(max-width: 700px){
-        width: 80%;
+        width: 100%;
         margin-left: 0;
     }
 `

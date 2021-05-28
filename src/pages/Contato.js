@@ -13,6 +13,16 @@ height: 100%;
 display: flex;
 justify-content: space-around;
 padding: 2%;
+
+button{
+    border-radius: 5px;
+    padding: 8px 12px;
+    background-color: #346FCE;
+
+    :hover{
+        background-color: #2C5282;
+    }
+}
 `
 
 const Imglateral = styled.img`
