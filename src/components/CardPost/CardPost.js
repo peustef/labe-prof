@@ -21,8 +21,10 @@ export default class CardPost extends React.Component {
       .post(`${URL}/${jobId}`, body, headers)
       .then((res) => {
         // Mensagem de adicionado ao carrinho
-        toast.success('Adicionado ao carrinho', {
+
+        toast.info('Adicionado ao carrinho', {
           position: "top-center",
+
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,

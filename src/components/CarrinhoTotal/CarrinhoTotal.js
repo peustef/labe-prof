@@ -14,7 +14,7 @@ export default class CarrinhoTotal extends React.Component {
     }
 
     compraFinalizada = () => {
-        return alert("Compra finalizada com sucesso!")
+        return window.confirm("Compra finalizada com sucesso!")
     }
 
     render() {
