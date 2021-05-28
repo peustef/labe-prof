@@ -8,13 +8,26 @@ export const ContainerCard = styled.div`
 `
 
 export const Card = styled.div`
+    width: 40rem;
     height: 440px;
     justify-content: space-evenly;
     align-content: space-between;
-
     /* faz quebrar a linha com ... */
     flex-wrap: wrap;
     min-width: 0;
+    animation: fade-in-right 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    @keyframes fade-in-right {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
 
     p{
         /* para não ter barra de rolagem */
