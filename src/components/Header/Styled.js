@@ -11,7 +11,11 @@ background-color: #f2f2f2;
 export const ContainerMenu = styled.div`
 
     button{
-            font-size: 22px;
+        font-size: 22px;
+
+        :hover{
+            background-color: #2C5282;
+        }
         }
         
     @media(max-width: 700px){

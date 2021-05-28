@@ -16,9 +16,14 @@ export const ContainerForm = styled.div`
   }
 
   button{
-    width: 20%;
-    padding: 4px 8px;
+    width: 22%;
+    padding: 8px 12px;
     border-radius: 5px;
+    background-color: #346FCE;
+
+    :hover{
+      background-color: #2C5282;
+    }
   }
 
   @media(max-width: 700px){

@@ -8,11 +8,24 @@ import styled from "styled-components";
 
 const Botao = styled.button`
     border-radius: 5px;
+    background-color: #346FCE;
+
+    :hover{
+        background-color: #2C5282;
+    }
 `
 
 const Formulario  = styled.form`
     display: flex;
     align-items: center;
+
+    select{
+        background-color: #346FCE;
+
+    :hover{
+        background-color: #2C5282;
+    }
+    }
 `
 
 

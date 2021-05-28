@@ -8,6 +8,11 @@ export const ContainerCard = styled.div`
 
     button{
       border-radius: 5px;
+      background-color: #346FCE;
+
+      :hover{
+        background-color: #2C5282;
+      }
     }
 `
 

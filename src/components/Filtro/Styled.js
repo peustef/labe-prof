@@ -3,10 +3,14 @@ import styled from "styled-components";
 export const ContainerFiltro = styled.div`
     display: flex;
     flex-direction: row;
+    background-color: #F2F2F2;
+
     select {
         padding: 5px;
         border-radius: 5px;
         outline: none;
+        background-color: white;
+        color: gray;
     }
 
     @media(max-width: 700px){
@@ -28,6 +32,7 @@ export const Pesquisa = styled.div`
     input{
         padding: 6px 40px;
         border-radius: 5px;
+        background-color: white;
     }
 
     @media(max-width: 700px){
@@ -46,5 +51,6 @@ export const ContainerOrdenacao = styled.div`
         margin-left: 2px;
         padding: 6px;
         border-radius: 5px;
+        background-color: white;
     }
 `
