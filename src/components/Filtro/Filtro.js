@@ -1,15 +1,16 @@
 import React from "react";
 import "../../tailwind.output.css";
+import {ContainerFiltro, Pesquisa} from './Styled'
 
 export default class Filtro extends React.Component {
-  
+
   render() {
     return (
-      <div className="grid grid-cols-3 justify-center items-center w-full m-2 p-2 rounded shadow bg-blue-100">
+      <ContainerFiltro className="grid lg:grid-cols-3 md:grid-cols-1 justify-center items-center w-full p-2 rounded shadow bg-blue-100">
         <div className="flex justify-center">
-          <div className="relative text-gray-600 focus-within:text-gray-400">
+          <Pesquisa className="relative text-gray-600 focus-within:text-gray-400">
             <span className="absolute inset-y-0 left-0 flex items-center pl-2">
-              
+
               <button
                 type="submit"
                 className="p-1 focus:outline-none focus:shadow-outline"
@@ -39,38 +40,36 @@ export default class Filtro extends React.Component {
               onChange={this.props.handleServico}
             />
 
-          </div>
+          </Pesquisa>
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex-col justify-center items-center">
+            <input
+              className="bg-blue-200 m-1 rounded-md pl-1 py-2 text-sm"
+              placeholder="Valor Mínimo"
+              type="number"
+              value={this.props.valorMin}
+              onChange={this.props.handleVMin}
+            />
+            <input
+              className="bg-blue-200 m-1 rounded-md pl-1 py-2 text-sm"
+              placeholder="Valor Máximo"
+              type="number"
+              value={this.props.valorMax}
+              onChange={this.props.handleVMax}
+            />
 
-          <input
-            className="bg-blue-200 m-1 rounded-md pl-1 py-2 text-sm"
-            placeholder="Valor Mínimo"
-            type="number"
-            value={this.props.valorMin}
-            onChange={this.props.handleVMin}
-          />
-
-          <input
-            className="bg-blue-200 m-1 rounded-md pl-1 py-2 text-sm"
-            placeholder="Valor Máximo"
-            type="number"
-            value={this.props.valorMax}
-            onChange={this.props.handleVMax}
-          />
-
-          <button 
+          {/* <button 
               onClick={this.props.ordenarListaFiltrada}
               className=" text-white font-semibold bg-blue-400 hover:bg-blue-600 p-2 m-1 rounded "
               >Buscar
-          </button>
+          </button> */}
 
         </div>
-        <div className="flex justify-center items-center p-2 px-5 m-2">
-          
+        <div className="flex justify-center items-center p-2 m-2 px-5">
+
           <label>
             <span className="font-semibold">Ordenar por: </span>
-            
+
             <select
               className="bg-blue-400 text-white font-semibold" onChange={this.props.ordenarProdutos} value={this.props.ordenar}
             >
@@ -84,7 +83,7 @@ export default class Filtro extends React.Component {
             {/* <p>Mostrando: {ordenaListaFiltrada.length}Produtos</p> */}
           </label>
         </div>
-      </div>
+      </ContainerFiltro>
     );
   }
 }

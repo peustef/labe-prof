@@ -1,6 +1,8 @@
 import React from "react";
 import { HiShoppingCart } from "react-icons/hi";
 import axios from "axios";
+import {ContainerCard, Card} from './Styled'
+
 
 export default class CardPost extends React.Component {
 
@@ -38,7 +40,7 @@ export default class CardPost extends React.Component {
       let num = Math.floor(Math.random() * 100 + 1)
 
       return (
-        <div
+        <Card
           key={job.id}
           className="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden my-10 ml-8 bg-gray-200 "
         >
@@ -53,6 +55,9 @@ export default class CardPost extends React.Component {
             src= {`https://picsum.photos/200/300?random=${num}`}
             alt="foto aula/professor"
           />
+          <di className="flex items-center justify-between px-4 py-2 bg-gray-200">
+            <span className="text-blue-700 font-bold text-sm">Prazo: {job.dueDate}</span>
+          </di>
           <div className="flex items-center justify-between px-4 py-2 bg-gray-200">
             <h1 className="text-blue-700 font-bold text-xl">
               R${job.price},00
@@ -66,13 +71,13 @@ export default class CardPost extends React.Component {
               Adicionar <HiShoppingCart />
             </button>
           </div>
-        </div>
+        </Card>
       );
     });
     return (
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-center items-center">
+      <ContainerCard className="grid lg:grid-cols-3 md:grid-cols-2 justify-center items-center">
         {jobs}
-      </div>
+      </ContainerCard>
     );
   }
 }
