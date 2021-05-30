@@ -5,9 +5,10 @@
 <img src="https://user-images.githubusercontent.com/75874462/120020551-3f350f00-bfc0-11eb-92c2-e0f8170986ac.png" >
 
 <em>A maior rede de tutores. Labeprof ajuda professores e alunos a se encontrarem. </em>
-<br>
+<hr>
 
-http://labeprof.surge.sh/
+# Link para acessar o projeto:
+[Aqui](http://labeprof.surge.sh/)
 
 
 ### Possui como depedência as seguintes libs:
