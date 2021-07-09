@@ -8,7 +8,7 @@
 <hr>
 
 # Link para acessar o projeto:
-[Aqui](http://labeprof.surge.sh/)
+[Aqui](https://labeprof.surge.sh/)
 
 
 ### Possui como depedência as seguintes libs:
